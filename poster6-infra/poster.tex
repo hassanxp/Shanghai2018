@@ -34,7 +34,7 @@
 \begin{document}
 
 \begin{poster}{
-grid=true,
+grid=false,
 %columns=1,
 borderColor=bordercol, % Border color of content boxes
 headerColorOne=headercol, % Background color for the header in the content boxes (left side)
@@ -77,17 +77,19 @@ This poster outlines the current infrastructure in place, open issues and future
 
 Currently there are 2 hosts and 1 NFS machine processing data during the MCS engineering runs in April and Oct 2018. This will be extended to target infrastructure below. 
 This consists of 3 hosts and two NFS boxes to provide as much redundancy and flexibility as possible. 
-\includegraphics[width=0.8\linewidth]{figures/PfsIcsMhsHardwareConfigTarget}
+
+\includegraphics[width=0.9\linewidth]{figures/PfsIcsMhsHardwareConfigTarget}
 }
 
 %----------------------------------------------------------------------------------------
 %	CORE SWITCH LAYOUT
 %----------------------------------------------------------------------------------------
 
-\headerbox{Core Switch Layout}{name=switches,column=1, span=2, below=infra}{
+\headerbox{Core Switch Layout}{name=switches,column=0, span=2, below=infra}{
 
 The detailed core switch configuration and ethernet connections to the host and NFS machines are shown below.
-\includegraphics[width=0.8\linewidth]{figures/DetailP2_Eth}
+
+\includegraphics[width=0.9\linewidth]{figures/DetailP2_Eth}
 }
 
 
@@ -95,14 +97,28 @@ The detailed core switch configuration and ethernet connections to the host and 
 %	OPEN POINTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Open Points}{name=plans,column=0,below=infra}{
+\headerbox{Open Points}{name=plans,column=2,below=infra, bottomaligned=switches}{
 
 \begin{enumerate}
 \item The 35TB (physical size=60TB; effective capacity=35TB) disk arrays on NFS-1 and -2 are still to be confirmed, pending on the number of slots available and the cost.
 \item The NFS-2 machine still needs to be purchased. How is the responsible (Subaru or PFS) is to be discussed.
-\item iSCSI links are preferred over FC. It is felt that the former are more robust. This may introduce a performance penalty however.
+\item iSCSI links are preferred over fiber cable. It is felt that the former are more robust. This may introduce a performance penalty however.
 \end{enumerate}
 }
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\headerbox{Acknowledgements}{name=acknowledgements,column=0, span=3, below=switches}{
+\begin{enumerate}
+\item H.S. and CP acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ.
+\end{enumerate}
+}
+
+%-------------
+% END
+%-------------
 \end{poster}
 
 \end{document}
