@@ -57,7 +57,18 @@ boxshade=plain
 {\sf\bf PFS Software Infrastructure at Subaru} % Poster title
 {\vspace{1em} Craig Loomis, Eiji Kyono and Hassan Siddiqui\\ % Author names
 {\smaller cloomis@astro.princeton.edu, kyono@naoj.org, hassans@astro.princeton.edu}} % Author email addresses
-{\includegraphics[scale=0.15]{logo}} % University/lab logo
+{
+% The logos are compressed a bit into a simple box to make them smaller on the result
+% (Wasn't able to find any bigger of them.)
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+	\fbox{
+		\begin{minipage}{14em}
+			\includegraphics[width=10em,height=4em]{PU-standard} 
+			\includegraphics[width=4em,height=4em]{subaru_color1_2400}
+		\end{minipage}
+	}
+}
 
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
@@ -78,7 +89,7 @@ This poster outlines the current infrastructure in place, open issues and future
 Currently there are 2 hosts and 1 NFS machine processing data during the MCS engineering runs in April and Oct 2018. This will be extended to target infrastructure below. 
 This consists of 3 hosts and two NFS boxes to provide as much redundancy and flexibility as possible. 
 
-\includegraphics[width=0.9\linewidth]{figures/PfsIcsMhsHardwareConfigTarget}
+\includegraphics[width=0.9\linewidth]{PfsIcsMhsHardwareConfigTarget}
 }
 
 %----------------------------------------------------------------------------------------
@@ -89,7 +100,7 @@ This consists of 3 hosts and two NFS boxes to provide as much redundancy and fle
 
 The detailed core switch configuration and ethernet connections to the host and NFS machines are shown below.
 
-\includegraphics[width=0.9\linewidth]{figures/DetailP2_Eth}
+\includegraphics[width=0.9\linewidth]{DetailP2_Eth}
 }
 
 
