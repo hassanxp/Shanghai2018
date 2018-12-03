@@ -76,7 +76,7 @@ boxshade=plain
 \headerbox{Introduction}{name=introduction,column=0,row=0, span=3}{
 The PFS software installed at Subaru needs to process and store critical science and calibration data during the course of operations. 
 The infrastructure on which the software runs must therefore be robust and reliable. 
-This poster outlines the current infrastructure in place, open issues and future plans.
+This poster outlines the current and planned infrastructure and lists the main open issues.
 }
 
 %----------------------------------------------------------------------------------------
@@ -88,6 +88,7 @@ This poster outlines the current infrastructure in place, open issues and future
 Currently there are 2 hosts and 1 NFS machine processing data during the MCS engineering runs in April and Oct 2018. This will be extended to target infrastructure below. 
 This consists of 3 hosts and two NFS boxes to provide as much redundancy and flexibility as possible. 
 
+\vspace{0.25cm}
 \includegraphics[width=0.9\linewidth]{PfsIcsMhsHardwareConfigTarget}
 }
 
@@ -132,9 +133,19 @@ See document PFS-ICS-PRU030000-01, available from the PBworks website.
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Acknowledgements}{name=acknowledgements, column=0, span=3, below=switches}{
+\headerbox{Acknowledgements}{name=acknowledgements, column=2, below=references}{
 
 HS and CL acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ. EK acknowledges support from the NAOJ.
+
+}
+
+%----------------------------------------------------------------------------------------
+%	USER ACCESS
+%----------------------------------------------------------------------------------------
+
+\headerbox{User Access}{name=users, column=0, span=2, below=switches, bottomaligned=acknowledgements}{
+
+For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
 
 }
 
