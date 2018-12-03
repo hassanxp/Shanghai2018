@@ -130,24 +130,27 @@ See document PFS-ICS-PRU030000-01, available from the PBworks website.
 }
 
 %----------------------------------------------------------------------------------------
+%	USER ACCESS
+%----------------------------------------------------------------------------------------
+
+\headerbox{User Access}{name=users, column=0, span=2, below=switches}{
+
+For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
+Content written to the {\tt pfs} group directories ({\tt /software/}, etc) are {\it writable} by all in the project, but
+content written to non-pfs group directories ({\tt /home/}, etc) are by default readable, {\it but not writable} by all in the project.
+
+}
+
+%----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Acknowledgements}{name=acknowledgements, column=2, below=references}{
+\headerbox{Acknowledgements}{name=acknowledgements, column=2, below=references, bottomaligned=users}{
 
 HS and CL acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ. EK acknowledges support from the NAOJ.
 
 }
 
-%----------------------------------------------------------------------------------------
-%	USER ACCESS
-%----------------------------------------------------------------------------------------
-
-\headerbox{User Access}{name=users, column=0, span=2, below=switches, bottomaligned=acknowledgements}{
-
-For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
-
-}
 
 %-------------
 % END
