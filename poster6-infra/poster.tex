@@ -23,7 +23,6 @@
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{relsize} % Used for making text smaller in some places
-
 \graphicspath{{figures/}} % Directory in which figures are stored
 
 \definecolor{bordercol}{RGB}{40,40,40} % Border color of content boxes
@@ -108,7 +107,7 @@ The detailed core switch configuration and ethernet connections to the host and 
 %	OPEN POINTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Open Points}{name=plans,column=2,below=infra, bottomaligned=switches}{
+\headerbox{Open Points}{name=points,column=2,below=infra}{
 
 \begin{enumerate}
 \item The 35TB (physical size=60TB; effective capacity=35TB) disk arrays on NFS-1 and -2 are still to be confirmed, pending on the number of slots available and the cost.
@@ -118,13 +117,23 @@ The detailed core switch configuration and ethernet connections to the host and 
 }
 
 %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\headerbox{References}{name=references, column=2, below=points, bottomaligned=switches}{
+
+See document PFS-ICS-PRU030000-01.
+
+}
+
+%----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Acknowledgements}{name=acknowledgements,column=0, span=3, below=switches}{
-\begin{enumerate}
-\item H.S. and C.L. acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ.
-\end{enumerate}
+\headerbox{Acknowledgements}{name=acknowledgements, column=0, span=3, below=switches}{
+
+HS and CL acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ. EK acknowledges support from the NAOJ.
+
 }
 
 %-------------
