@@ -100,7 +100,7 @@ This consists of 3 hosts and two NFS boxes to provide as much redundancy and fle
 
 The detailed core switch configuration and ethernet connections to the host and NFS machines are shown below.
 
-{ \hspace*{1cm}\includegraphics[width=0.9\linewidth]{DetailP2_Eth} }
+{ \hspace*{1cm}\includegraphics[width=0.8\linewidth]{DetailP2_Eth} }
 }
 
 
@@ -113,7 +113,7 @@ The detailed core switch configuration and ethernet connections to the host and 
 \begin{enumerate}
 \item The 35TB (physical size=60TB; effective capacity=35TB) disk arrays on NFS-1 and -2 are still to be confirmed, pending on the number of slots available and the cost.
 \item The NFS-2 machine still needs to be purchased. How is the responsible (Subaru or PFS) is to be discussed.
-\item iSCSI links are preferred over fiber cable. It is felt that the former are more robust. This may introduce a performance penalty however.
+\item iSCSI over ethernet is preferred to using fiber cable. It is felt that the former is more reliable and is more easily recoverable. This may introduce a performance penalty however.
 \end{enumerate}
 
 \vspace{0.5cm}
@@ -123,7 +123,7 @@ The detailed core switch configuration and ethernet connections to the host and 
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references, column=2, below=points, bottomaligned=switches}{
+\headerbox{References}{name=references, column=2, below=points}{
 
 See document PFS-ICS-PRU030000-01, available from the PBworks website.
 
@@ -135,11 +135,12 @@ See document PFS-ICS-PRU030000-01, available from the PBworks website.
 
 \headerbox{User Access}{name=users, column=0, span=2, below=switches}{
 
-The PFS software infrastructure is accessible remotely through SSL VPN upon approval from a PFS project member at Subaru(Takato-san).
-For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
-Content written to the {\tt pfs} group directories ({\tt /software/}, etc) are {\it writable} by all in the project, but
+\begin{itemize}
+\item The PFS software infrastructure is accessible remotely through SSL VPN upon approval from a PFS project member at Subaru(Takato-san).
+\item For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
+\item Content written to the {\tt pfs} group directories ({\tt /software/}, etc) are {\it writable} by all in the project, but
 content written to non-pfs group directories ({\tt /home/}, etc) are by default readable, {\it but not writable} by all in the project.
-
+\end{itemize}
 }
 
 %----------------------------------------------------------------------------------------
