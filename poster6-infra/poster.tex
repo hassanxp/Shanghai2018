@@ -135,6 +135,7 @@ See document PFS-ICS-PRU030000-01, available from the PBworks website.
 
 \headerbox{User Access}{name=users, column=0, span=2, below=switches}{
 
+The PFS software infrastructure is accessible remotely through SSL VPN upon approval from a PFS project member at Subaru(Takato-san).
 For security, maintenance and traceability, all development and installation of software will be done using dedicated user accounts, with a per-user primary group id. In addition, all users will also share a common secondary group ({\tt pfs}).
 Content written to the {\tt pfs} group directories ({\tt /software/}, etc) are {\it writable} by all in the project, but
 content written to non-pfs group directories ({\tt /home/}, etc) are by default readable, {\it but not writable} by all in the project.
