@@ -19,7 +19,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[a0paper,portrait]{baposter}
-
+\usepackage{setspace}
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{booktabs} % Horizontal rules in tables
 \usepackage{relsize} % Used for making text smaller in some places
@@ -97,9 +97,9 @@ Currently there are 2 hosts and 1 NFS machine processing data during the MCS eng
 
 \headerbox{Core Switch Layout}{name=switches,column=0, span=2, below=infra}{
 
-The detailed core switch configuration and ethernet connections to the host and NFS machines are shown below.
+The detailed core switch configuration and ethernet connections to the host and NFS machines for the current configuration are shown below. This will be updated in due course to cover 3 hosts and 2 NFS machines.
 
-{ \hspace*{1cm}\includegraphics[width=0.8\linewidth]{DetailP2_Eth} }
+{ \hspace*{1cm}\includegraphics[width=0.7\linewidth]{DetailP2_Eth} }
 }
 
 
@@ -107,12 +107,13 @@ The detailed core switch configuration and ethernet connections to the host and 
 %	OPEN POINTS
 %----------------------------------------------------------------------------------------
 
-\headerbox{Open Points}{name=points,column=2,below=infra}{
+\headerbox{Open Points and Risks}{name=points,column=2,below=infra}{
 
 \begin{enumerate}
 \item The 35TB (physical size=60TB; effective capacity=35TB) disk arrays on NFS-1 and -2 are still to be confirmed, pending on the number of slots available and the cost.
 \item The NFS-2 machine still needs to be purchased. How is the responsible (Subaru or PFS) is to be discussed.
 \item iSCSI over ethernet is preferred to using fiber cable. It is felt that the former is more reliable and is more easily recoverable. This may introduce a performance penalty however.
+\item Risks include: possible failure of Host2 that can affect the DB related operations; the loss of the 100TB disk array and related data.
 \end{enumerate}
 
 \vspace{0.5cm}
@@ -129,10 +130,20 @@ See document PFS-ICS-PRU030000-01, available from the PBworks website.
 }
 
 %----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\headerbox{Acknowledgements}{name=acknowledgements, column=2, below=references}{
+
+{\tiny HS and CL acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ. EK acknowledges support from the NAOJ.}
+
+}
+
+%----------------------------------------------------------------------------------------
 %	USER ACCESS
 %----------------------------------------------------------------------------------------
 
-\headerbox{User Access}{name=users, column=0, span=2, below=switches}{
+\headerbox{User Access}{name=users, column=0, span=2, below=switches, , bottomaligned=acknowledgements}{
 
 \begin{itemize}
 \item The PFS software infrastructure is accessible remotely through SSL VPN upon approval from a PFS project member at Subaru(Takato-san).
@@ -142,15 +153,6 @@ content written to non-pfs group directories ({\tt /home/}, etc) are by default 
 \end{itemize}
 }
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-
-\headerbox{Acknowledgements}{name=acknowledgements, column=2, below=references, bottomaligned=users}{
-
-HS and CL acknowledge support by the National Science Foundation under Grant No 1636426 and support from the NAOJ. EK acknowledges support from the NAOJ.
-
-}
 
 
 %-------------
